@@ -1,5 +1,5 @@
-# reprograma-back-end
+# Reprograma curso Back-end
 
-## primeira aula
+## Exercicíos
 
-Lhebs
+- *Semana 1:* https://github.com/blackALT/exercicio01
