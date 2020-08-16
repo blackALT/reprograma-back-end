@@ -8,6 +8,7 @@ const nota5 = input.question('Digite quinta nota: ')
 const nota6 = input.question('Digite sexta nota: ')
 
 const media = ((parseFloat(nota1)+parseFloat(nota2)+parseFloat(nota3)+parseFloat(nota4)+parseFloat(nota5)+parseFloat(nota6))/(6.0))
+
 console.log("=== Resultado final ===")
 
 const resultado = media.toFixed(1)
