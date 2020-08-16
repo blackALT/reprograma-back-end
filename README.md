@@ -1,5 +1,5 @@
-# reprograma curso Back-end
+# reprograma curso back-end
 
-## Exercicíos
+## Exercicíos semanais
 
 - *Semana 1:* https://github.com/blackALT/exercicio01
