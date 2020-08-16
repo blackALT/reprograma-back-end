@@ -13,10 +13,10 @@ console.log("=== Resultado final ===")
 
 const resultado = media.toFixed(1)
 
-if (resultado >= 7){
+if (resultado >= 7.0){
     console.log(`Aluno aprovado. Média: ${resultado}`)
-} else if (resultado < 7 && resultado >= 5){
+} else if (resultado < 7.0 && resultado >= 5.0){
     console.log(`Aluno em recuperação. Média: ${resultado}`)
-} else if (resultado < 5){
+} else if (resultado < 5.0){
     console.log(`Aluno reprovado. Média: ${resultado}`)
 }
