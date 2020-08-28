@@ -99,4 +99,3 @@ function inverteArray(num1,num2,num3,num4){
     return arrayInvertido
 }
 console.log("Array Invertido: " + inverteArray(1,2,3,4))
-semana 3
