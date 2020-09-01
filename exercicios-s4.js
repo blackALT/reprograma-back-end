@@ -19,9 +19,7 @@
 // 5381579886310193
 // 5261400319746371
 
-const cartao = "5261400319746371"
-const cartao2 = "5261400319756371"
-
+const cartao = "5555666677778884"
 
 // 8*2 (16-9=7) 8 8*2 (16-9=7) 7 7*2 (14-9=5) 7 7*2 (14-9=5) 6 6*2 (12-9=3) 6 6*2 (12-9=3) 5 5*2 (10-9=1) 5 5*2 (10-9=1)
 // (7+7+5+5+3+3+1+1)+(8+7+7+6+6+5+5)+4 = 80/10 = 0
@@ -32,7 +30,7 @@ function checaCartao(card){
   for (let i=0; i < card.length; i++){
     arrayCartao[i] = card.substr(i,1)
   }
-
+  
   const digVerificador = Number(arrayCartao.pop());
   const cartaoReverso = arrayCartao.reverse()
   let somaDigitos = 0;
@@ -54,18 +52,19 @@ function checaCartao(card){
     return "Cartão válido: " + card
  }
   return "Cartão inválido: " + card
-}
-console.log(checaCartao(cartao))
-console.log(checaCartao(cartao2))
 
+}
+//console.log(checaCartao(cartao))
 
 ///////////////////////
 
 // DESAFIO - saudar clientes
 
 // Escreva uma função chamada saudarCliente.
-// Essa função deve receber um nome, verificar se ele existe na base de clientes e retornar uma saudação com base em quantas vezes a cliente visitou um estabelecimento. 
-// Consulte o objeto baseClientes abaixo. A saudação deve ser diferente, dependendo do nome da reserva.
+// Essa função deve receber um nome, verificar se ele existe na base de clientes e retornar uma 
+// saudação com base em quantas vezes a cliente visitou um estabelecimento. 
+// Consulte o objeto baseClientes abaixo. A saudação deve ser diferente, dependendo do nome da 
+// reserva.
 
 // Caso 1 - Cliente desconhecida (o nome não está presente no objeto baseClientes)
 // console.log(saudarCliente('Chiquinha')) // --> 'Olá, é a primeira vez por aqui?'
@@ -94,3 +93,31 @@ const baseClientes = {
     visitas: 3,
   },
 }
+
+const cliente1 = 'Paty'
+const cliente2 = 'Florinda'
+const cliente3 = 'Clotilde'
+const cliente4 = 'Wanessa'
+
+
+function saudarCliente(cliente){
+  let saudacao = 'Olá, ' + cliente + ' é a primeira vez por aqui?'
+
+    for (nome in baseClientes) {
+
+      for (visitas in baseClientes[nome]){
+        if (nome === cliente){
+          if (baseClientes[nome][visitas] === 1){
+            saudacao = 'Bem-vinda, ' + cliente + ' Que bom que voltou!'
+        } else if (baseClientes[nome][visitas] > 1){
+          saudacao = 'Bem-vinda mais uma vez, ' + cliente + ' !'    
+       }    
+      }
+    }
+  }
+  return saudacao
+}
+//console.log(saudarCliente(cliente1))
+//console.log(saudarCliente(cliente2))
+//console.log(saudarCliente(cliente3))
+//console.log(saudarCliente(cliente4))
