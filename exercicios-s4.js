@@ -28,7 +28,9 @@ function checaCartao(card){
   const arrayCartao = []
   
   for (let i=0; i < card.length; i++){
+
     arrayCartao[i] = card.substr(i,1)
+
   }
   
   const digVerificador = Number(arrayCartao.pop());
@@ -36,14 +38,19 @@ function checaCartao(card){
   let somaDigitos = 0;
  
   for (let i=0; i < cartaoReverso.length; i++){
+
     let multiDigitos = Number(cartaoReverso[i]);
+    
     if(i % 2 == 0){
+
       multiDigitos *= 2;
+      
       if (multiDigitos > 9){
-        multiDigitos = multiDigitos - 9;
-        }
-     }
-     somaDigitos += multiDigitos;
+      
+        multiDigitos = multiDigitos - 9;      
+      }
+    }
+    somaDigitos += multiDigitos;
  }
  
  const validaCartao = (somaDigitos + digVerificador)
@@ -52,7 +59,6 @@ function checaCartao(card){
     return "Cartão válido: " + card
  }
   return "Cartão inválido: " + card
-
 }
 //console.log(checaCartao(cartao))
 
@@ -94,6 +100,8 @@ const baseClientes = {
   },
 }
 
+// Variáveis de teste
+
 const cliente1 = 'Paty'
 const cliente2 = 'Florinda'
 const cliente3 = 'Clotilde'
@@ -106,11 +114,17 @@ function saudarCliente(cliente){
     for (nome in baseClientes) {
 
       for (visitas in baseClientes[nome]){
+
         if (nome === cliente){
+
           if (baseClientes[nome][visitas] === 1){
+
             saudacao = 'Bem-vinda, ' + cliente + ' Que bom que voltou!'
+
         } else if (baseClientes[nome][visitas] > 1){
+
           saudacao = 'Bem-vinda mais uma vez, ' + cliente + ' !'    
+
        }    
       }
     }
