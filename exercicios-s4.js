@@ -19,7 +19,7 @@
 // 5381579886310193
 // 5261400319746371
 
-const cartao = "5555666677778884"
+const cartao = "5381579886310193"
 
 // 8*2 (16-9=7) 8 8*2 (16-9=7) 7 7*2 (14-9=5) 7 7*2 (14-9=5) 6 6*2 (12-9=3) 6 6*2 (12-9=3) 5 5*2 (10-9=1) 5 5*2 (10-9=1)
 // (7+7+5+5+3+3+1+1)+(8+7+7+6+6+5+5)+4 = 80/10 = 0
@@ -33,21 +33,21 @@ function checaCartao(card){
 
   }
   
-  const digVerificador = Number(arrayCartao.pop());
+  const digVerificador = Number(arrayCartao[arrayCartao.length-1]);
   const cartaoReverso = arrayCartao.reverse()
   let somaDigitos = 0;
  
-  for (let i=0; i < cartaoReverso.length; i++){
+  for (let i=1; i < cartaoReverso.length; i++){
 
     let multiDigitos = Number(cartaoReverso[i]);
     
-    if(i % 2 == 0){
+    if(i % 2 != 0){
 
       multiDigitos *= 2;
       
       if (multiDigitos > 9){
       
-        multiDigitos = multiDigitos - 9;      
+        multiDigitos -= 9;      
       }
     }
     somaDigitos += multiDigitos;
@@ -133,5 +133,5 @@ function saudarCliente(cliente){
 }
 //console.log(saudarCliente(cliente1))
 //console.log(saudarCliente(cliente2))
-//console.log(saudarCliente(cliente3))
+//console.log(saudarCliente(cliente4))
 //console.log(saudarCliente(cliente4))
