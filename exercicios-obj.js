@@ -17,14 +17,7 @@ function objLivro(titulo, paginas, autoria){
         paginas,
         autoria
     }
-
-  /*  const livro = {}
-
-    livro['titulo'] = param1
-    livro['paginas'] = param2
-    livro['autoria'] = param3
- */
-    return livro
+     return livro
 }
 //console.log(objLivro('Antes do Baile Verde', 234, 'Lygia Fagundes Telles'))
 
@@ -42,10 +35,10 @@ function objFrase(){
 
 // 3) Crie uma função que receba um objeto como o abaixo:
 
-// const pessoa = {
-//   nome: 'Nazaré',
-//   sobrenome: 'Tedesco',
-// }
+const pessoa = {
+   nome: 'Nazaré',
+   sobrenome: 'Tedesco',
+}
 
 // Dado um objeto que tem uma propriedade 'nome' e uma propriedade 'sobrenome', a função deve retornar um 
 // novo objeto com as mesmas propriedades que o objeto recebido e mais uma propriedade, chamada 'nomeCompleto', 
@@ -58,16 +51,18 @@ function objFrase(){
 //   nomeCompleto: 'Nazaré Tedesco'
 // }
 
-function objNome(param1, param2){
-    const pessoa = {}
+function objNome(objeto){
+    let updatePessoa = pessoa
 
-    pessoa['nome'] = param1
-    pessoa['sobrenome'] = param2
-    pessoa['nomeCompleto'] = (param1 + " " + param2)
+    updatePessoa = {
+        nome: pessoa.nome,
+        sobrenome: pessoa.sobrenome,
+        nomeCompleto: pessoa.nome + " " + pessoa.sobrenome
+     }
 
-    return pessoa
+     return updatePessoa
 }
-// console.log(objNome('Nazaré','Tedesco'))
+//console.log(objNome(pessoa))
 
 // 4) Crie uma função que receba o objeto abaixo e o nome de uma das chaves, 
 // e retorne o produto de todos os elementos do array que for selecionado através da chave.
@@ -86,18 +81,19 @@ function somaArray(obj, chave){
     for (let i = 0; i < obj[chave].length; i++){
         soma += obj[chave][i]
     }
-    return soma
+    return 'Soma for: ' + soma
 }
 
 function somaArrayForEach(obj, chave){
     let soma = 0
     
-    obj[chave].forEach( function(indice){
-        soma +=indice
+    obj[chave].forEach( function(i){
+        soma +=i
     })
-    return soma
+    return 'Soma forEach: ' + soma
 }
 
 
-console.log(somaArray(objArrays, 'array2')) // 26
-console.log(somaArrayForEach(objArrays, 'array2')) // 26
+//console.log(somaArray(objArrays, 'array2')) // 26
+//console.log(somaArrayForEach(objArrays, 'array2')) // 26
+
